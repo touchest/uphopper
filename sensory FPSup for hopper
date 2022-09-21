@@ -1,0 +1,44 @@
+wait(1)
+ UserSettings().GameSettings.MasterVolume = 0
+ UserSettings().GameSettings.MasterVolume = 0
+settings().Rendering.QualityLevel = "Level01"
+for _,v in next, workspace:GetDescendants() do
+if v:IsA("BasePart") then
+v.Material = Enum.Material.SmoothPlastic
+end
+end
+
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.25, 0, 0.25, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "sensory project"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 47.000
+TextLabel.TextTransparency = 0.950
+
+-- Scripts:
+
+local function NZITR_fake_script() -- TextLabel.Center 
+	local script = Instance.new('Script', TextLabel)
+
+	script.Parent.Position = UDim2.new(0.5,-(script.Parent.Size.X.Offset/2),0.5,-(script.Parent.Size.Y.Offset/2))
+	
+end
+coroutine.wrap(NZITR_fake_script)()
